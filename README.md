@@ -1,10 +1,14 @@
-# 🔧  .files used by ENC Teknoloji
+# 🔧  ENC Teknoloji .files
+
+Repository for the .files used by ENC Teknoloji.
+
+## Installation
 
 [chezmoi](https://www.chezmoi.io) should be downloaded and installed for .file management. Initialization can be done with the following command after the program installation:
 
     chezmoi init --apply encteknoloji
 
-## On Click Install
+## One-Click Install
 
 As you may not have [chezmoi](https://www.chezmoi.io) installed, you may use following one-line command to install and initialize .files:
 
