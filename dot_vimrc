@@ -1,3 +1,6 @@
+" Copyright ENC Teknoloji A.Ş.
+" SPDX-License-Identifier: MIT
+
 set rtp+=/opt/homebrew/opt/fzf
 
 " Yapılandırmalar  ---------------------------------------------------------------- {{{

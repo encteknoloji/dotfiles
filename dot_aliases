@@ -1,15 +1,18 @@
- #!/usr/bin/env bash
+#!/usr/bin/env bash
  
- # add following line to the end of .bashrc
- # [ -f ~/.aliases ] && source ~/.aliases
- 
- # Kubernetes alias
- if command -v kubectl &> /dev/null
- then
-   alias k=kubectl
-   alias kgp="kubectl get pods"
-   alias kgpw="kgp --watch"
-   alias kgpwide="kgp -o wide"
- 
-   complete -o default -F __start_kubectl k
- fi
+# Copyright ENC Teknoloji A.Ş.
+# SPDX-License-Identifier: MIT
+
+# add following line to the end of .bashrc
+# [ -f ~/.aliases ] && source ~/.aliases
+
+# Kubernetes alias
+if command -v kubectl &> /dev/null
+then
+  alias k=kubectl
+  alias kgp="kubectl get pods"
+  alias kgpw="kgp --watch"
+  alias kgpwide="kgp -o wide"
+
+  complete -o default -F __start_kubectl k
+fi
