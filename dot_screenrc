@@ -1,0 +1,54 @@
+# Copyright ENC Teknoloji A.Ş.
+# SPDX-License-Identifier: MIT
+
+# Display notification when activity is detected for a window
+activity "Activity detected in %t (%n)!"
+
+# Do not show remnants of previously opened programs such as editors
+altscreen on
+
+# Ensure session is saved on hangup
+autodetach on
+
+# Display notification when bell is detected for a window
+bell_msg "Bell detected in %t (%n)!"
+
+# Set window titles
+caption always
+caption string "%n %t"
+
+# Start session using my home directory as the working directory
+chdir
+
+# Detect activity in new windows
+defmonitor on
+
+# Set status bar
+hardstatus alwayslastline 
+hardstatus string "%{= kg}[%{c}%H%? %1`%?%{g}][%= %{= kw}%-w%{+b yk} %n*%t%?(%u)%? %{-}%+w %=%{g}][%{m}%m/%d/%Y %{r}%c%{g}]"
+
+# Start with a few named windows and configure the layout
+# Navigate windows using ctrl+a+<window_number> and areas using ctrl+a+<tab>.
+# Or use the custom keybinds defined at the bottom of this file.
+screen -t shell_0 0 bash # start a bash shell in the larger top area
+split                    # split horizontally, creating a top and bottom area
+focus down               # set focus to new bottom area
+screen -t shell_1 1 bash # start another bash shell in this bottom area
+split -v                 # split vertically, creating two smaller bottom areas
+focus right              # set focus to new bottom-right area
+screen -t htop 2 htop    # start htop in this new bottom-right area
+focus top                # reset focus to the larger top area
+select 0                 # ensure the larger top area is using the first bash shell
+
+# Set this many lines of scrollback
+scrollback 10000
+
+# Disable copyright notice on startup
+startup_message off
+
+# Terminal emulation type
+term screen-256color
+#term xterm-256color
+
+# Disable visual bell to prevent the screen flash
+vbell off
